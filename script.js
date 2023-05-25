@@ -18,11 +18,16 @@ function clockCountdown (outputID) {
     const distance = countdownGoal - actualTime;
 
     // Calculate the values
-    const days = 00;
-    const hours = 00;
-    const minutes = 00;
-    const seconds = 00;
+    const days = Math.floor(distance % (1000 * 60 * 60 * 24));
+    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
     const milliseconds = Math.floor(distance % 1000);
+
+    // NOTE: In this code, the values are calculated by 
+    // dividing the distance by the respective unit in 
+    // milliseconds and using the remainder (%) operator 
+    // to extract the remaining time for the smaller units.
 
     console.log(distance)
     console.log(`${days}d, ${hours}h, ${minutes}m, ${seconds}s, ${milliseconds}ms`)
