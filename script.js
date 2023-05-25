@@ -16,15 +16,8 @@ function clockCountdown (outputID) {
     // => Find the distance between now and the count down date
     const distance = countdownGoal - actualTime;
 
-    convertMsToTime(distance)
-    // NOTE: In this code, the values are calculated by 
-    // dividing the distance by the respective unit in 
-    // milliseconds and using the remainder (%) operator 
-    // to extract the remaining time for the smaller units.
-
     // => Console Log Time stamp to Desired Date Distance
-    // console.log(distance)
-    //console.log(`${hours}h, ${minutes}m, ${seconds}s, ${milliseconds}ms`)
+    console.log(convertMsToTime(distance))
 }
 
 function padTo2Digits(num) {
@@ -39,6 +32,11 @@ function padTo2Digits(num) {
     seconds = seconds % 60;
     minutes = minutes % 60;
     hours = hours % 24;
+
+    // NOTE: In this code, the values are calculated by 
+    // dividing the distance by the respective unit in 
+    // milliseconds and using the remainder (%) operator 
+    // to extract the remaining time for the smaller units.
   
     return `${padTo2Digits(hours)}:${padTo2Digits(minutes)}:${padTo2Digits(
       seconds,
