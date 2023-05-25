@@ -3,8 +3,8 @@ console.log('JS Loaded Successfully!');
 const clockOuput = document.getElementById('clock-Output');
 
 // => Test Time Stamp
-const t = new Date().getTime();
-console.log(t);
+// const t = new Date().getTime();
+// console.log(t);
 
 clockCountdown()
 
@@ -29,6 +29,7 @@ function clockCountdown (outputID) {
     // milliseconds and using the remainder (%) operator 
     // to extract the remaining time for the smaller units.
 
-    console.log(distance)
+    // => Console Log Time stamp to Desired Date Distance
+    // console.log(distance)
     console.log(`${days}d, ${hours}h, ${minutes}m, ${seconds}s, ${milliseconds}ms`)
 }
