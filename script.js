@@ -2,7 +2,8 @@ console.log('JS Loaded Successfully!');
 
 const clockOuput = document.getElementById('clock-Output');
 
-clockCountdown()
+// Timer and 100ms to delay at seconds
+const clockDelay = setInterval(clockCountdown, 1000)
 
 function clockCountdown (outputID) {
 
@@ -14,7 +15,12 @@ function clockCountdown (outputID) {
     const distance = countdownGoal - actualTime;
 
     // => Console Log Time stamp to Desired Date Distance
-    console.log(convertMsToTime(distance))
+    console.log(convertMsToTime(distance));
+
+    if (distance < 500) {
+        clearInterval(clockDelay);
+        console.log('DAJE ROMA');
+    }
 }
 
 function padTo2Digits(num) {
