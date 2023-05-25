@@ -12,7 +12,7 @@ function clockCountdown (outputID) {
     // => Get today's date and time
     const actualTime = new Date().getTime();
     // => Set the date we're counting down to
-    const countdownGoal =  new Date("May 27, 2023 09:30:00").getTime();
+    const countdownGoal =  new Date("May 26, 2023 09:30:00").getTime();
     // => Find the distance between now and the count down date
     const distance = countdownGoal - actualTime;
 
@@ -28,6 +28,7 @@ function padTo2Digits(num) {
     let seconds = Math.floor(milliseconds / 1000);
     let minutes = Math.floor(seconds / 60);
     let hours = Math.floor(minutes / 60);
+    let days = Math.floor(hours / 24);
   
     seconds = seconds % 60;
     minutes = minutes % 60;
@@ -38,7 +39,7 @@ function padTo2Digits(num) {
     // milliseconds and using the remainder (%) operator 
     // to extract the remaining time for the smaller units.
   
-    return `${padTo2Digits(hours)}:${padTo2Digits(minutes)}:${padTo2Digits(
+    return `${padTo2Digits(days)}d:${padTo2Digits(hours)}h:${padTo2Digits(minutes)}m:${padTo2Digits(
       seconds,
-    )}`;
+    )}s`;
   }
