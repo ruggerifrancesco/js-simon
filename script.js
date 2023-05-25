@@ -17,13 +17,13 @@ function clockCountdown (outputID) {
     // => Find the distance between now and the count down date
     const distance = countdownGoal - actualTime;
 
-    const months = Math.floor(distance)
+    // Calculate the values
     const days = 00;
     const hours = 00;
     const minutes = 00;
     const seconds = 00;
-    const mseconds = 00;
+    const milliseconds = Math.floor(distance % 1000);
 
     console.log(distance)
-    console.log(`${months}M, ${days}d, ${hours}h, ${minutes}m, ${seconds}s, ${mseconds}ms`)
+    console.log(`${days}d, ${hours}h, ${minutes}m, ${seconds}s, ${milliseconds}ms`)
 }
