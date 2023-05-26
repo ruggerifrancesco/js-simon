@@ -4,6 +4,11 @@ const clockOutputDays = document.getElementById('clockOutputDays');
 const clockOutputHours = document.getElementById('clockOutputHours');
 const clockOutputMinutes = document.getElementById('clockOutputMinutes');
 const clockOutputSeconds = document.getElementById('clockOutputSeconds');
+const clockOutputGoal = document.getElementById('countdownGoalContainer');
+
+// Message Output Section
+const clockGoalOutput = document.getElementById('clockGoalOutput');
+const messageOutput = 'E ora di iniziare la lezione!';
 
 // Timer and 100ms to delay at seconds
 const clockDelay = setInterval(clockCountdown, 1000)
@@ -13,16 +18,25 @@ function clockCountdown () {
     // => Get today's date and time
     const actualTime = new Date().getTime();
     // => Set the date we're counting down to
-    const countdownGoal =  new Date("May 26, 2023 09:30:00").getTime();
+    const countdownGoal =  new Date("May 26, 2023 06:37:00").getTime();
     // => Find the distance between now and the count down date
     const distance = countdownGoal - actualTime;
+    // => Remove the digits display
+    const countdownItems = document.querySelectorAll('.countdown-item');
 
     // => Console Log Time stamp to Desired Date Distance
     console.log(convertMsToTime(distance));
 
+    // => Instruction when countdown reaches 0
     if (distance < 500) {
         clearInterval(clockDelay);
-        console.log('DAJE ROMA');
+        console.log(messageOutput);
+        clockOutputGoal.style.display = 'flex';
+        clockGoalOutput.textContent = messageOutput;
+
+        countdownItems.forEach(function(item) {
+          item.style.display = 'none';
+        });
     }
 }
   
