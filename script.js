@@ -1,7 +1,7 @@
 console.log('JS Loaded Successfully!');
 
 // Timer and 100ms to delay at seconds
-const clockDelay = setInterval(clockCountdown, 1000)
+const clockDelay = setInterval(clockCountdown, 1000);
 
 const clockOutputDays = document.getElementById('clockOutputDays');
 const clockOutputHours = document.getElementById('clockOutputHours');
@@ -18,7 +18,7 @@ function clockCountdown () {
     // => Get today's date and time
     const actualTime = new Date().getTime();
     // => Set the date we're counting down to
-    const countdownGoal =  new Date("May 26, 2023 09:30:00").getTime();
+    const countdownGoal =  new Date("May 29, 2023 09:30:00").getTime();
     // => Find the distance between now and the count down date
     const distance = countdownGoal - actualTime;
     // => Remove the digits display
@@ -28,7 +28,7 @@ function clockCountdown () {
     console.log(convertMsToTime(distance));
 
     // => Instruction when countdown reaches 0
-    if (distance < 500) {
+    if (distance <= 0) {
         clearInterval(clockDelay);
         console.log(messageOutput);
         clockOutputGoal.style.display = 'flex';
