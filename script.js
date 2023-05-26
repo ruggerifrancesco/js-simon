@@ -1,5 +1,8 @@
 console.log('JS Loaded Successfully!');
 
+// Timer and 100ms to delay at seconds
+const clockDelay = setInterval(clockCountdown, 1000)
+
 const clockOutputDays = document.getElementById('clockOutputDays');
 const clockOutputHours = document.getElementById('clockOutputHours');
 const clockOutputMinutes = document.getElementById('clockOutputMinutes');
@@ -10,15 +13,12 @@ const clockOutputGoal = document.getElementById('countdownGoalContainer');
 const clockGoalOutput = document.getElementById('clockGoalOutput');
 const messageOutput = 'E ora di iniziare la lezione!';
 
-// Timer and 100ms to delay at seconds
-const clockDelay = setInterval(clockCountdown, 1000)
-
 function clockCountdown () {
 
     // => Get today's date and time
     const actualTime = new Date().getTime();
     // => Set the date we're counting down to
-    const countdownGoal =  new Date("May 26, 2023 06:37:00").getTime();
+    const countdownGoal =  new Date("May 26, 2023 09:30:00").getTime();
     // => Find the distance between now and the count down date
     const distance = countdownGoal - actualTime;
     // => Remove the digits display
