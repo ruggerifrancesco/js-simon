@@ -129,3 +129,7 @@ body {
     align-items: center;
     justify-content: center;
 }
+
+.countdown-goal-output {
+    font-size: 5rem;
+}
