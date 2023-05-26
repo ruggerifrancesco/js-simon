@@ -38,19 +38,23 @@ body {
     width: 100%;
     height: 100%;
     text-align: center;
-    transition: transform 0.4s;
+    transition: transform 0.2s;
     transform-style: preserve-3d;
-    animation: flipAnimation 8s infinite;
+    animation: flipAnimation 10s infinite;
+    animation-delay: 10s;
   }
   
   @keyframes flipAnimation {
     0% {
       transform: rotateY(0deg);
     }
-    33.33% {
+    25% {
+      transform: rotateY(0deg);
+    }
+    50% {
       transform: rotateY(180deg);
     }
-    66.66% {
+    75% {
       transform: rotateY(180deg);
     }
     100% {
@@ -89,17 +93,23 @@ body {
     -webkit-backdrop-filter: blur(11.3px);
     color: white;
     transform: rotateY(180deg);
+
+    flex-direction: column;
   }
   
   .countdown-digit,
   .countdown-digit-label {
-    font-size: 5rem;
     font-weight: bold;
     transform: translateZ(25px);
   }
 
+  .countdown-digit {
+    font-size: 5rem;
+  }
+
   .countdown-digit-label {
     text-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    font-size: 2rem;
   }
   
 
