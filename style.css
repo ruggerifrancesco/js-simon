@@ -14,6 +14,10 @@ body {
     font-family: 'Coustard', serif;
     background: rgb(255,255,255);
     background: linear-gradient(45deg, rgba(255,255,255,1) 0%, rgba(189,189,189,1) 95%); 
+
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none; /* Standard syntax */
 }
 
 .countdown-container {
